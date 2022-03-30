@@ -1,11 +1,18 @@
 <%- include('../partials/header') %>
     
+
+
     <h2>Create A Post</h2>
+    <% if (user) { %>
     <form action="/posts" method="POST">
         <label>Title:
             <input type="text" name="title">
+            <textarea name="content"></textarea>
         </label>
         <input type="submit" value="Add Post">
     </form>
+    <% } %>
+
+
     
     <%- include('../partials/footer') %>

@@ -1,16 +1,19 @@
 <%- include('../partials/header') %>
 
-<h1>ALL POSTS</h1>
+<h1>RELIEF</h1>
   <table>
     <thead>
       <tr>
-        <th>POST</th>
+        <th>ALL POSTS</th>
       </tr>
     </thead>
     <tbody>
       <% posts.forEach(function(p) { %>
         <tr>
+          <td class="post-user"><img alt="avatar" src="<%= p.userAvatar %>"><%= p.userName %></td>
           <td><%= p.title %></td>
+          <td><%= p.content %></td>
+          <td><a href="/posts/<%= p._id %>">DETAILS</a></td>
         </tr>
       <%  }) %>
     </tbody>
