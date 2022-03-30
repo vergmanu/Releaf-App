@@ -1,10 +1,17 @@
 <%- include('../partials/header') %>
 
-<h1>Edit Post</h1>
-<form action="/posts/<%= post.id %>?_method=PUT" method="POST" autocomplete="off">
-  <input type="text" name="title">
-  <textarea name="content"></textarea>
-  <button type="submit">Save Changes</button>
-</form>
+
+
+<h2>EDIT MY POST</h2>
+<% if (user) { %>
+  <form action="/posts/:id" method="PUT">
+    <label>Title:
+        <input type="text" name="title">
+        <textarea name="content"></textarea>
+    </label>
+    <input type="submit" value="Add Post">
+  </form>
+<% } %>
+
 
 <%- include('../partials/footer') %>

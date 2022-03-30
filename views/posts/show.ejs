@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 
-<h2>POSTS</h2>
+<h2>POST</h2>
 <section>
   <div>Title: </div>
   <div><%= post.title %></div>
@@ -11,8 +11,7 @@
 <br><br>
 
 <h2>COMMENTS</h2>
-<form method="POST"
-  action="/posts/<%= post._id %>/comments">
+<form action="/posts/<%= post._id %>/comments" method="POST">
   <label>Comment:</label>
   <textarea name="content"></textarea>
   <input type="submit" value="Add Comment">
