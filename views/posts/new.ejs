@@ -4,7 +4,7 @@
 
     <h2>Create A Post</h2>
     <% if (user) { %>
-    <form action="/posts" method="POST">
+    <form id="new-form" action="/posts" method="POST">
         <label>Title:
             <input type="text" name="title">
             <textarea name="content"></textarea>

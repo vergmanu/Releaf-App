@@ -1,24 +1,104 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
-  background-image: url("https://images.squarespace-cdn.com/content/v1/56bab20a3c44d8795bd5ddf5/1459106556040-TJDLLRBMGZ5L7WD1B4HM/pattern-8.jpg?format=2500w");
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: #424748;
 }
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+}
+
+body > nav {
+  grid-area: nav;
+  background-color: #a5ddc7;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+/* nav > img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+} */
+
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/56bab20a3c44d8795bd5ddf5/1459106556040-TJDLLRBMGZ5L7WD1B4HM/pattern-8.jpg?format=2500w");
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+body > main h1:first-child {
+  margin-bottom: 50px;
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav > a:hover:not(.active) {
+  color: rgb(23, 110, 84);
+  background-color: #f086cc;
+}
+
+nav > a.active {
+  color: white;
+  cursor: default;
+
+#new-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+};
 
 a {
   color: #00B7FF;
 }
 
-.login {
+#add-comment-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#list a {
+  border-radius: 4px;
+  background-color: #B8C0C2;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#list a:hover {
+  background-color: white;
+}
+
+
+/* .login {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 34px;
-}
+} */
 
-.login img {
+/* .login img {
   height: 30px;
-}
+} */
 
 .post-user {
   display: flex;

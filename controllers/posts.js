@@ -10,17 +10,6 @@ module.exports = {
 
 };
 
-function update(req, res) {
-    Post.update(req.params.id, req.body);
-    res.redirect('/posts');
-}
-
-function edit(req, res) {
-    res.render('posts/edit', {
-        post: Post.getOne(req.params.id)
-    })
-}
-
 function create(req, res) {
     // Add the user-centric info to req.body
     req.body.user = req.user._id;
@@ -48,6 +37,21 @@ function index(req, res) {
 function show(req, res) {
     Post.findById(req.params.id, function(err, post) {
         res.render('posts/show', { post });
+    });
+}
+
+async function edit(req, res) {
+    const post = await Post.findById(req.params.id)
+    res.render('posts/edit', {
+        post: post
+    })
+}
+
+function update(req, res) {
+    Post.findOneAndUpdate({_id: req.params.id}, req.body, function(err, post) {
+        if (err) return res.redirect('/posts')
+        res.redirect('/posts');
+
     });
 }
 

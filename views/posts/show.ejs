@@ -11,7 +11,7 @@
 <br><br>
 
 <h2>COMMENTS</h2>
-<form action="/posts/<%= post._id %>/comments" method="POST">
+<form id="add-comment-form" action="/posts/<%= post._id %>/comments" method="POST">
   <label>Comment:</label>
   <textarea name="content"></textarea>
   <input type="submit" value="Add Comment">
