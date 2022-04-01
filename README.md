@@ -9,8 +9,15 @@ https://project-relief.herokuapp.com/
 Trello Board:
 https://trello.com/b/FYlXjYlj/project-2
 
-Other technologies used:
-MEN Stack, HTML, CSS, Javascript, Heroku, Google Cloud
+Technologies used:
+Trello,
+MEN Stack, 
+Google Cloud,
+Google OAuth, 
+Heroku,
+HTML, 
+CSS, 
+Javascript
 
 RELIEF APP:
 
