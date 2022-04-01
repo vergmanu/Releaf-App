@@ -9,6 +9,9 @@ https://project-relief.herokuapp.com/
 Trello Board:
 https://trello.com/b/FYlXjYlj/project-2
 
+Other technologies used:
+MEN Stack, HTML, CSS, Javascript, Heroku, Google Cloud
+
 RELIEF APP:
 
 <img width="1111" alt="Welcome" src="https://user-images.githubusercontent.com/99706973/161201254-3c3e4de5-aaeb-4e71-b004-7d7f450d0c7a.png">
