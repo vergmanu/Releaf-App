@@ -21,3 +21,4 @@ Next Steps:
 Add some hard-coded tips and tricks available to anyone using the app.
 Allow user to delete the post, currently users can only edit.
 Allow user to input a name when adding a post or comment. 
+Create a mobile friendly version of the app. 
