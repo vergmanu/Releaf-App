@@ -2,16 +2,19 @@
     
 
 
-    <h2>Create A Post</h2>
+<div class="box">
+    <h2>ADD A TIP!</h2>
     <% if (user) { %>
-    <form id="new-form" action="/posts" method="POST">
-        <label>Title:
-            <input type="text" name="title">
-            <textarea name="content"></textarea>
-        </label>
-        <input type="submit" value="Add Post">
+    <form action="/posts" method="POST">
+        <label class="label">name your technique:
+        </label><br><br>
+            <input class="title-here" type="text" name="title"><br><br><br>
+        <label class="label">what gives you some relief from anxiety?</label><br><br>
+            <textarea class="text-here" name="content"></textarea><br>
+        <input class="button" type="submit" value="POST">
     </form>
     <% } %>
+</div>
 
 
     

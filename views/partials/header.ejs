@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title></title>
+  <title>Relief</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alike+Angular&family=Anybody&family=Bungee&family=Bungee+Hairline&family=Bungee+Outline&family=Bungee+Shade&family=Calistoga&family=Capriola&family=Coustard&family=Fredoka+One&family=Hammersmith+One&family=Rubik&family=Send+Flowers&family=Ubuntu&display=swap');
+  </style>
 </head>
 <body class="body">
   
   <nav>
-    <img src="">
-    <a href="/posts">HOME</a>
+    <h1 class="nav-text">RELIEF</h1>
+    <a href="/">HOME</a>
+    <a href="/posts">RELIEF TIPS</a>
     <% if (user) { %>
-    <a href="/posts/new">NEW POST</a>
+    <a href="/posts/new">ADD A TIP</a>
     <a href="/logout">LOG OUT</a>
     <% } else { %>
-    <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <a href="/auth/google" class="login">LOG IN&nbsp;<img id="login-img" src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
   </nav>
   <main>

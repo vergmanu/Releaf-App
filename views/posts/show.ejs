@@ -1,40 +1,46 @@
 <%- include('../partials/header') %>
 
-<h2>POST</h2>
-<section>
-  <div>Title: </div>
-  <div><%= post.title %></div>
-  <div>Content: </div>
-  <div><%= post.content %></div>
-</section>
 
-<br><br>
+<div class="box-two">
+<h2>FULL POST</h2>
+<td><%= post.title %></td><br><br>
+<td><%= post.content %></td><br><br>
+</div>
+
+
+<div class="box">
+  <br><br><br>
+  <% if (user) { %>
+    <label>leave a comment</label>
+    <form id="add-comment-form" action="/posts/<%= post._id %>/comments" method="POST">
+      <textarea class="text-here" name="content"></textarea><br>
+      <input class="button" type="submit" value="POST COMMENT">
+      <br><br><br>
+    </form>
+    <% } else { %>
+      <h3>LOGIN TO LEAVE A COMMENT</h3>
+    <% } %>
 
 <h2>COMMENTS</h2>
-<form id="add-comment-form" action="/posts/<%= post._id %>/comments" method="POST">
-  <label>Comment:</label>
-  <textarea name="content"></textarea>
-  <input type="submit" value="Add Comment">
-</form>
-
 <% if (post.comments.length) { %>
   <table>
     <thead>
       <tr>
-      	 <th>Date</th>
-        <th>Content</th>
+        <th>POSTED BY</th>
+        <th>COMMENT</th>
+      	<th>DATE</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="comments-section">
       <% post.comments.forEach(function(c) { %>
         <tr>
-          <td class="post-user"><img alt="avatar" src="<%= c.userAvatar %>"><%= c.userName %></td>
-          <td><%= c.createdAt.toLocaleDateString() %></td>
+          <td class="post-user"><img alt="avatar" src="<%= c.userAvatar %>"></td><br>
           <td><%= c.content %></td>
+          <td><%= c.createdAt.toLocaleDateString() %></td>
           <td>
             <% if (user && user._id.equals(c.user)) { %>
             <form action="/comments/<%= c.id %>?_method=DELETE" method="POST">
-            <button type="submit">X</button>
+            <button type="submit">X</button><br><br><br><br><br>
             </form>
             <% } %>
           </td>
@@ -43,9 +49,9 @@
     </tbody>
   </table>
 <% } else { %>
-  <h5>No Comments Yet</h5>
+  <h3>NO COMMENTS YET</h3>
 <% } %>
-
+</div>
 
 
 <%- include('../partials/footer') %>

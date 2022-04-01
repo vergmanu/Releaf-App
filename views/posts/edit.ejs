@@ -1,17 +1,20 @@
 <%- include('../partials/header') %>
 
 
-
+<div class="box">
 <h2>EDIT MY POST</h2>
 <% if (user) { %>
   <form action="/posts/<%= post._id %>?_method=PUT" method="POST">
-    <label>Title:
-        <input type="text" name="title">
-        <textarea name="content"></textarea>
-    </label>
-    <input type="submit" value="Add Post">
+    <label class="label">edit title</label><br><br>
+        <input class="title-here" type="text" name="title"><br><br><br>
+    <label class="label">edit content</label><br><br>
+        <textarea class="text-here" name="content"></textarea><br>
+    <input class="button" type="submit" value="SUBMIT EDITS">
   </form>
 <% } %>
-
+</div>
 
 <%- include('../partials/footer') %>
+
+
+

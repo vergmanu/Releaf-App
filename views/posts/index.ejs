@@ -1,27 +1,35 @@
 <%- include('../partials/header') %>
 
-<h1>RELIEF</h1>
-  <table id="list">
+
+
+<div class="box">
+<h1>TIPS FOR RELIEF</h1>
+<h2>FROM THE COMMUNITY</h2>
+  <table>
     <thead>
       <tr>
-        <th>ALL POSTS</th>
+        <th>POSTED BY</th>
+        <th>POST TITLE</th>
+        <th>VIEW</th>
       </tr>
     </thead>
     <tbody>
       <% posts.forEach(function(p) { %>
         <tr>
-          <td class="post-user"><img alt="avatar" src="<%= p.userAvatar %>"><%= p.userName %></td>
+          <td class="post-user"><img alt="avatar" src="<%= p.userAvatar %>"></td>
           <td><%= p.title %></td>
-          <td><%= p.content %></td>
-          <td><a href="/posts/<%= p._id %>">DETAILS</a></td>
+          <td><a class="button-two" href="/posts/<%= p._id %>">FULL POST</a></td>
           <td>
             <% if (user && user._id.equals(p.user)) { %>
-              <a href="/posts/<%= p._id %>/edit">Edit My Post</a>
+              <a class="button-two" href="/posts/<%= p._id %>/edit">EDIT POST</a>
             <% } %>
           </td>
         </tr>
       <%  }) %>
     </tbody>
   </table>
+</div>
+
+ 
   
   <%- include('../partials/footer') %>
